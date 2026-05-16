@@ -6,6 +6,11 @@ import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import { cloudflare } from "@cloudflare/vite-plugin";
 
 export default defineConfig(({ command }) => {
+  // Detect if we are building inside Vercel's hosting environment.
+  // If we are on Vercel, we must disable @cloudflare/vite-plugin so Nitro/Vinxi
+  // can compile native Vercel serverless functions in .vercel/output.
+  const isVercel = !!process.env.VERCEL;
+
   return {
     resolve: {
       alias: {
@@ -38,7 +43,7 @@ export default defineConfig(({ command }) => {
         server: { entry: "server" },
       }),
       react(),
-      ...(command === "build" ? [cloudflare({ viteEnvironment: { name: "ssr" } })] : []),
+      ...(command === "build" && !isVercel ? [cloudflare({ viteEnvironment: { name: "ssr" } })] : []),
     ],
   };
 });
