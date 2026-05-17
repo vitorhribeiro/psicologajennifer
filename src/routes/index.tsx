@@ -97,12 +97,9 @@ function Nav() {
         <div className="flex flex-col h-full bg-gradient-to-b from-transparent to-primary/5">
           {/* Header do painel */}
           <div className="h-20 flex items-center justify-between px-6">
-            <div className="flex items-center gap-2">
-              <img src={logoImg} alt="Jennifer Ferreira Logo" className="h-10 w-auto object-contain" />
-              <div className="flex flex-col leading-none pt-1">
-                <span className="text-2xl text-primary" style={{ fontFamily: "'Alex Brush', cursive" }}>Jennifer</span>
-                <span className="text-2xl text-primary ml-5 -mt-1" style={{ fontFamily: "'Alex Brush', cursive" }}>Ferreira</span>
-              </div>
+            <div className="flex flex-col leading-none pt-2">
+              <span className="text-3xl text-primary" style={{ fontFamily: "'Sacramento', cursive" }}>Jennifer</span>
+              <span className="text-3xl text-primary ml-5 -mt-2" style={{ fontFamily: "'Sacramento', cursive" }}>Ferreira</span>
             </div>
             <button
               onClick={() => setOpen(false)}
@@ -229,7 +226,7 @@ function Hero() {
       <div className="absolute inset-0 -z-20 bg-gradient-to-b from-primary-soft/40 via-background to-background" />
       <ClinicLineArt />
       <div className="absolute top-40 -left-20 w-72 h-72 rounded-full bg-primary/10 blur-3xl -z-20" />
-      <div className="mx-auto w-full max-w-6xl px-6 grid md:grid-cols-2 gap-12 items-center my-auto">
+      <div className="mx-auto w-full max-w-6xl px-6 grid lg:grid-cols-2 gap-12 items-center my-auto">
         <div className="reveal">
           {/* Glassmorphic Eyebrow Badge */}
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1.5 text-xs font-semibold text-primary mb-6 backdrop-blur-sm select-none">
@@ -271,11 +268,11 @@ function Hero() {
         </div>
 
         {/* Premium Photo Card in an Architectural Arch Frame */}
-        <div className="relative reveal max-w-sm ml-auto">
+        <div className="relative reveal max-w-[280px] sm:max-w-sm mx-auto lg:ml-auto mt-8 lg:mt-0">
           {/* Multi-tone soft glow behind */}
           <div className="absolute -inset-6 rounded-[2.5rem] bg-gradient-to-tr from-primary/25 via-sky-400/10 to-transparent blur-3xl -z-10 animate-pulse duration-3000" />
           
-          {/* Portrait Arch Frame Container (Aligns flat chest cut with bottom rounded edge elegantly) */}
+          {/* Portrait Arch Frame Container */}
           <div className="relative rounded-t-[11rem] rounded-b-[2rem] overflow-hidden border border-border/80 bg-gradient-to-b from-card via-primary-soft/40 to-primary-soft shadow-2xl transition-all duration-500 hover:shadow-primary/15 hover:-translate-y-1">
             <img
               src={jenniferPhoto}
@@ -397,6 +394,67 @@ function MonsteraLineArt({ className = "absolute left-[3%] bottom-12 w-40 h-40 m
       <path d="M50 18 C40 8, 42 28, 50 33 C58 28, 60 8, 50 18 Z" />
       <path d="M44 14 L48 19" />
       <path d="M56 14 L52 19" />
+    </svg>
+  );
+}
+
+function HangingPotLineArt({ className = "" }) {
+  return (
+    <svg className={className} viewBox="0 0 100 150" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+      {/* Ceiling Rope */}
+      <path d="M 50 0 V 30" />
+      <path d="M 48 0 V 30" strokeWidth="0.5" />
+      <path d="M 52 0 V 30" strokeWidth="0.5" />
+      
+      {/* Main Knot */}
+      <path d="M 48 30 C 45 32, 45 34, 48 36 C 50 38, 52 38, 54 36 C 55 34, 55 32, 52 30 Z" />
+      
+      {/* Strings to basket */}
+      <path d="M 49 35 L 30 60" />
+      <path d="M 50 36 L 40 60" />
+      <path d="M 50 36 L 60 60" />
+      <path d="M 51 35 L 70 60" />
+
+      {/* Basket */}
+      <path d="M 28 60 C 28 75, 40 85, 50 85 C 60 85, 72 75, 72 60 Z" />
+      <path d="M 25 60 H 75" />
+      {/* Basket weaving texture */}
+      <path d="M 35 65 L 65 65" strokeDasharray="3 3" />
+      <path d="M 40 72 L 60 72" strokeDasharray="3 3" />
+      <path d="M 45 79 L 55 79" strokeDasharray="3 3" />
+
+      {/* Bushy leaves at the top of the basket */}
+      <path d="M 30 60 C 25 50, 35 45, 40 55 C 45 45, 55 45, 60 55 C 65 45, 75 50, 70 60" />
+      <path d="M 35 50 C 35 40, 45 40, 45 50" />
+      <path d="M 55 50 C 55 40, 65 40, 65 50" />
+      <path d="M 42 55 C 45 45, 55 45, 58 55" />
+
+      {/* Cascading Vine 1 (Left long) */}
+      <path d="M 32 60 C 20 80, 25 110, 30 130" />
+      {/* Leaves for Vine 1 */}
+      <path d="M 28 75 C 18 75, 15 85, 25 85 Z" />
+      <path d="M 27 90 C 15 90, 15 100, 25 100 Z" />
+      <path d="M 28 105 C 18 105, 15 115, 25 115 Z" />
+      <path d="M 29 120 C 20 120, 20 130, 28 130 Z" />
+      <path d="M 30 130 C 35 135, 40 130, 35 125 Z" />
+
+      {/* Cascading Vine 2 (Center short) */}
+      <path d="M 45 60 C 40 75, 50 85, 45 100" />
+      <path d="M 43 70 C 35 70, 35 80, 43 80 Z" />
+      <path d="M 47 80 C 55 80, 55 90, 47 90 Z" />
+      <path d="M 44 95 C 38 95, 38 105, 45 105 Z" />
+
+      {/* Cascading Vine 3 (Right medium) */}
+      <path d="M 68 60 C 80 80, 70 100, 75 115" />
+      <path d="M 72 75 C 82 75, 85 85, 75 85 Z" />
+      <path d="M 72 90 C 82 90, 85 100, 75 100 Z" />
+      <path d="M 74 105 C 84 105, 85 115, 75 115 Z" />
+      
+      {/* Some extra small leaves near the pot */}
+      <path d="M 30 65 C 20 65, 20 75, 30 75 Z" />
+      <path d="M 70 65 C 80 65, 80 75, 70 75 Z" />
+      <path d="M 55 60 C 65 65, 60 75, 55 70 Z" />
+      <path d="M 40 60 C 30 65, 35 75, 40 70 Z" />
     </svg>
   );
 }
@@ -860,10 +918,145 @@ function FloatingWhatsApp() {
   );
 }
 
+function Preloader() {
+  const [step, setStep] = useState(0);
+  const [removed, setRemoved] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    
+    // Calcular largura da barra de rolagem
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    
+    // Bloquear rolagem e compensar espaço da barra
+    document.body.style.overflow = "hidden";
+    if (scrollbarWidth > 0) {
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+      const header = document.querySelector('header');
+      if (header) header.style.paddingRight = `${scrollbarWidth}px`;
+    }
+    
+    // Passo 1: Mudar de "Jennifer Ferreira" para "Psicologia Cognitiva"
+    const t1 = setTimeout(() => setStep(1), 2500);
+    
+    // Passo 2: Engolir o texto pela barra e centralizar o logo
+    const t2 = setTimeout(() => setStep(2), 5000);
+    
+    // Passo 3: Começar o fade-out de todo o preloader
+    const t3 = setTimeout(() => setStep(3), 6500);
+    
+    // Passo 4: Remover da DOM e liberar rolagem
+    const t4 = setTimeout(() => {
+      setRemoved(true);
+      document.body.style.overflow = ""; 
+      document.body.style.paddingRight = "";
+      const header = document.querySelector('header');
+      if (header) header.style.paddingRight = "";
+    }, 8000);
+
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+      clearTimeout(t3);
+      clearTimeout(t4);
+      document.body.style.overflow = "";
+      document.body.style.paddingRight = "";
+      const header = document.querySelector('header');
+      if (header) header.style.paddingRight = "";
+    };
+  }, []);
+
+  if (removed) return null;
+
+  return (
+    <div 
+      className={`fixed inset-0 z-[100] bg-background flex items-center justify-center overflow-hidden transition-all duration-[1.5s] ease-in-out ${
+        step === 3 ? "opacity-0 pointer-events-none blur-xl scale-105" : "opacity-100 blur-0 scale-100"
+      }`}
+    >
+      {/* Background Decor - Hanging Plant (Top Left) */}
+      <HangingPotLineArt 
+        className="absolute left-0 md:left-12 top-0 w-48 h-72 md:w-[400px] md:h-[600px] text-primary pointer-events-none opacity-[0.05] md:opacity-[0.08]" 
+      />
+
+      {/* Background Decor - Chair Line Art (Bottom Right) */}
+      <ChairLineArt 
+        className="absolute -right-8 -bottom-8 w-64 h-64 md:w-[450px] md:h-[450px] text-primary pointer-events-none opacity-[0.05] md:opacity-[0.08]" 
+      />
+
+      {/* Main Content */}
+      <div className={`flex flex-row items-center justify-center relative z-10 w-full px-2 transition-all duration-[1.5s] ease-in-out`}>
+        
+        {/* Logo */}
+        <div className={`flex flex-row items-center justify-end transition-all duration-[1.5s] ease-in-out flex-shrink-0 ${
+          step >= 2 
+            ? "w-[80px] md:w-[112px] pr-0 opacity-100 scale-110" 
+            : (mounted ? "w-[92px] sm:w-[100px] md:w-[144px] pr-3 sm:pr-5 md:pr-8 opacity-100 scale-100" : "w-[92px] sm:w-[100px] md:w-[144px] pr-3 sm:pr-5 md:pr-8 opacity-0 scale-90")
+        }`}>
+          <img 
+            src={logoImg} 
+            alt="Logo Jennifer Ferreira" 
+            className="h-20 md:h-28 w-auto object-contain drop-shadow-sm" 
+          />
+        </div>
+
+        {/* Divider (Always vertical now) */}
+        <div 
+          className={`w-px bg-primary/30 transition-all duration-1000 ease-in-out flex-shrink-0 origin-center ${
+            step >= 2 ? "h-20 md:h-24 opacity-0 scale-y-0" : (mounted ? "h-20 md:h-24 opacity-100 scale-y-100 delay-500" : "h-20 md:h-24 opacity-0 scale-y-0")
+          }`} 
+        />
+
+        {/* Text Area */}
+        <div 
+          className={`relative flex flex-col justify-center flex-shrink-0 overflow-hidden transition-all duration-[1.5s] ease-in-out ${
+            step >= 2 ? "w-0 opacity-0" : "w-[140px] sm:w-[150px] md:w-[190px] opacity-100"
+          } h-32 md:h-48`}
+          style={{
+            WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 16px, black 100%)",
+            maskImage: "linear-gradient(to right, transparent 0%, black 16px, black 100%)"
+          }}
+        >
+          
+          {/* State 0: Jennifer Ferreira (Cursive) */}
+          <div 
+            className={`absolute inset-y-0 left-0 w-full flex flex-col justify-center items-start pl-3 sm:pl-5 md:pl-8 transition-all duration-1000 ease-in-out ${
+              step === 0 
+                ? (mounted ? "opacity-100 translate-y-0 translate-x-0 delay-700" : "opacity-0 translate-y-4 md:translate-y-6 translate-x-0") 
+                : "opacity-0 -translate-y-4 md:-translate-y-6 translate-x-0 pointer-events-none"
+            }`}
+          >
+            <span className="text-[2.2rem] md:text-[2.8rem] text-primary leading-none" style={{ fontFamily: "'Sacramento', cursive" }}>Jennifer</span>
+            <span className="text-[2.2rem] md:text-[2.8rem] text-primary ml-3 md:ml-6 -mt-2 md:-mt-3 leading-none" style={{ fontFamily: "'Sacramento', cursive" }}>Ferreira</span>
+          </div>
+
+          {/* State 1: Terapia Cognitiva */}
+          <div 
+            className={`absolute inset-y-0 left-0 w-full flex flex-col justify-center items-start text-left pl-3 sm:pl-5 md:pl-8 transition-all duration-1000 ease-in-out ${
+              step === 1 
+                ? "opacity-100 translate-x-0 translate-y-0 delay-300" 
+                : step === 0 
+                  ? "opacity-0 translate-x-0 translate-y-4 md:translate-y-6 pointer-events-none" 
+                  : "opacity-0 -translate-x-8 md:-translate-x-12 translate-y-0 pointer-events-none"
+            }`}
+          >
+            <span className="text-[11px] md:text-[17px] font-bold text-primary uppercase tracking-[0.2em] md:tracking-[0.25em] leading-[1.3] md:leading-[1.4] drop-shadow-sm">Psicologia</span>
+            <span className="text-[9px] md:text-[13px] font-medium text-primary/70 uppercase tracking-[0.15em] md:tracking-[0.2em] leading-[1.3] md:leading-[1.4]">Cognitiva</span>
+            <span className="text-[9px] md:text-[13px] font-medium text-primary/70 uppercase tracking-[0.15em] md:tracking-[0.2em] leading-[1.3] md:leading-[1.4]">Comportamental</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Index() {
   useReveal();
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <Preloader />
       <Nav />
       <main>
         <Hero />
