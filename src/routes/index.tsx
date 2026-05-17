@@ -48,8 +48,12 @@ function Nav() {
       <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-background/80 border-b border-border/60">
         <div className="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
           {/* Brand */}
-          <a href="#inicio" className="flex items-center group select-none">
-            <img src={logoImg} alt="Jennifer Ferreira Logo" className="h-10 md:h-11 w-auto object-contain" />
+          <a href="#inicio" className="flex items-center gap-3.5 group select-none">
+            <img src={logoImg} alt="Jennifer Ferreira Logo" className="h-9 md:h-10 w-auto object-contain" />
+            <div className="w-px h-9 bg-primary/25 group-hover:bg-primary/50 transition-colors" />
+            <div className="text-[10px] leading-[1.3] text-primary font-normal tracking-wide max-w-[100px]">
+              Psicologia<br />Cognitiva<br />Comportamental
+            </div>
           </a>
 
           {/* Desktop nav */}
