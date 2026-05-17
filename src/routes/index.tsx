@@ -10,7 +10,7 @@ import {
   MessageCircle, Instagram, Mail, Phone, ArrowRight, Heart, Brain, Users,
   Sparkles, Shield, Sun, HandHeart, Compass, ArrowDown, GraduationCap,
   CloudRain, Smile, Activity, Leaf, Repeat, MoonStar, Quote, Star,
-  Menu, X,
+  Menu, X, ChevronRight,
 } from "lucide-react";
 import jenniferPhoto from "@/assets/jennifer.png";
 import otixLogo from "@/assets/logo quadrado sf.png";
@@ -85,50 +85,69 @@ function Nav() {
       {/* Mobile menu overlay */}
       {open && (
         <div
-          className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm md:hidden"
+          className="fixed inset-0 z-40 bg-background/80 backdrop-blur-sm md:hidden"
           onClick={() => setOpen(false)}
         />
       )}
 
       {/* Mobile menu panel */}
       <div
-        className={`fixed top-0 right-0 h-full w-72 z-50 bg-background border-l border-border shadow-2xl flex flex-col transition-transform duration-300 ease-in-out md:hidden ${open ? "translate-x-0" : "translate-x-full"
-          }`}
+        className={`fixed top-0 right-0 h-full w-[85vw] max-w-[320px] z-50 bg-background/95 backdrop-blur-xl border-l border-border/50 shadow-2xl flex flex-col transition-transform duration-300 ease-in-out md:hidden ${open ? "translate-x-0" : "translate-x-full"}`}
       >
-        {/* Header do painel */}
-        <div className="h-16 flex items-center justify-between px-6 border-b border-border">
-          <img src={logoImg} alt="Jennifer Ferreira Logo" className="h-10 w-auto object-contain" />
-          <button
-            onClick={() => setOpen(false)}
-            className="w-8 h-8 flex items-center justify-center rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/10 transition"
-          >
-            <X className="w-4 h-4" />
-          </button>
-        </div>
-
-        {/* Links */}
-        <nav className="flex flex-col px-4 py-6 gap-1">
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
+        <div className="flex flex-col h-full bg-gradient-to-b from-transparent to-primary/5">
+          {/* Header do painel */}
+          <div className="h-20 flex items-center justify-between px-6">
+            <div className="flex items-center gap-2">
+              <img src={logoImg} alt="Jennifer Ferreira Logo" className="h-10 w-auto object-contain" />
+              <div className="flex flex-col leading-none pt-1">
+                <span className="text-2xl text-primary" style={{ fontFamily: "'Alex Brush', cursive" }}>Jennifer</span>
+                <span className="text-2xl text-primary ml-5 -mt-1" style={{ fontFamily: "'Alex Brush', cursive" }}>Ferreira</span>
+              </div>
+            </div>
+            <button
               onClick={() => setOpen(false)}
-              className="px-4 py-3 rounded-xl text-sm font-medium text-muted-foreground hover:text-primary hover:bg-primary/10 transition"
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-muted/30 text-muted-foreground hover:text-primary hover:bg-primary/10 transition"
+              aria-label="Fechar Menu"
             >
-              {l.label}
-            </a>
-          ))}
-        </nav>
+              <X className="w-5 h-5" />
+            </button>
+          </div>
 
-        {/* CTA mobile */}
-        <div className="mt-auto px-6 pb-8">
-          <a
-            href={WHATSAPP} target="_blank" rel="noopener noreferrer"
-            onClick={() => setOpen(false)}
-            className="flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-3 text-sm font-medium text-primary-foreground hover:opacity-90 transition shadow-sm w-full"
-          >
-            <MessageCircle className="w-4 h-4" /> Agendar pelo WhatsApp
-          </a>
+          {/* Links */}
+          <nav className="flex flex-col px-8 py-8 gap-1">
+            <div className="text-[10px] font-semibold text-primary uppercase tracking-[0.2em] mb-4">Navegação</div>
+            {links.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className="group flex items-center justify-between py-4 border-b border-border/40 text-base font-medium text-foreground/80 hover:text-primary transition-colors"
+              >
+                <span>{l.label}</span>
+                <ChevronRight className="w-4 h-4 text-muted-foreground/40 group-hover:text-primary group-hover:translate-x-1 transition-all" />
+              </a>
+            ))}
+          </nav>
+
+          {/* CTA & Socials */}
+          <div className="mt-auto px-6 pb-8 flex flex-col gap-6">
+            <div className="flex items-center gap-4 px-2">
+              <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-10 h-10 rounded-full border border-border bg-card flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition">
+                <Instagram className="w-4 h-4" />
+              </a>
+              <a href={EMAIL} aria-label="E-mail" className="w-10 h-10 rounded-full border border-border bg-card flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition">
+                <Mail className="w-4 h-4" />
+              </a>
+            </div>
+            
+            <a
+              href={WHATSAPP} target="_blank" rel="noopener noreferrer"
+              onClick={() => setOpen(false)}
+              className="flex items-center justify-center gap-2 rounded-2xl bg-primary px-4 py-4 text-sm font-semibold text-primary-foreground hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-[var(--shadow-soft)] w-full"
+            >
+              <MessageCircle className="w-5 h-5" /> Agendar Sessão
+            </a>
+          </div>
         </div>
       </div>
     </>
@@ -206,11 +225,11 @@ function ClinicLineArt() {
 
 function Hero() {
   return (
-    <section id="inicio" className="relative pt-32 pb-24 overflow-hidden isolate">
+    <section id="inicio" className="relative min-h-[100dvh] flex flex-col pt-24 pb-6 overflow-hidden isolate">
       <div className="absolute inset-0 -z-20 bg-gradient-to-b from-primary-soft/40 via-background to-background" />
       <ClinicLineArt />
       <div className="absolute top-40 -left-20 w-72 h-72 rounded-full bg-primary/10 blur-3xl -z-20" />
-      <div className="mx-auto max-w-6xl px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div className="mx-auto w-full max-w-6xl px-6 grid md:grid-cols-2 gap-12 items-center my-auto">
         <div className="reveal">
           {/* Glassmorphic Eyebrow Badge */}
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1.5 text-xs font-semibold text-primary mb-6 backdrop-blur-sm select-none">
@@ -222,8 +241,11 @@ function Hero() {
 
           {/* Premium Typographic Hierarchy */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.1] tracking-tight">
-            <span className="text-muted-foreground/80 font-normal font-sans text-lg md:text-xl block uppercase tracking-wider mb-2 font-medium">
+            <span className="text-muted-foreground/80 font-normal font-sans text-lg md:text-xl flex items-center gap-2.5 uppercase tracking-wider mb-2 font-medium">
               Psicóloga Clínica
+              <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors flex items-center" aria-label="Instagram">
+                <Instagram className="w-[18px] h-[18px] md:w-5 md:h-5" />
+              </a>
             </span>
             <span className="text-primary font-serif font-bold block">
               Jennifer Ferreira
@@ -236,13 +258,13 @@ function Hero() {
           </p>
 
           {/* Buttons with Premium Interactions */}
-          <div className="mt-8 flex flex-wrap gap-4 items-center">
+          <div className="mt-8 flex flex-col sm:flex-row flex-wrap gap-4 items-stretch sm:items-center">
             <a href={WHATSAPP} target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground hover:opacity-95 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/25 transition-all duration-300">
+              className="inline-flex justify-center items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground hover:opacity-95 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 w-full sm:w-auto">
               <MessageCircle className="w-4 h-4" /> Agendar pelo WhatsApp
             </a>
             <a href="#sobre"
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-background/50 backdrop-blur-sm px-7 py-3.5 text-sm font-semibold text-foreground hover:border-primary hover:text-primary hover:-translate-y-0.5 transition-all duration-300">
+              className="inline-flex justify-center items-center gap-2 rounded-full border border-border bg-background/50 backdrop-blur-sm px-7 py-3.5 text-sm font-semibold text-foreground hover:border-primary hover:text-primary hover:-translate-y-0.5 transition-all duration-300 w-full sm:w-auto">
               Conhecer meu trabalho <ArrowRight className="w-4 h-4" />
             </a>
           </div>
@@ -275,7 +297,7 @@ function Hero() {
           </div>
         </div>
       </div>
-      <div className="mx-auto max-w-6xl px-6 mt-16 flex justify-center">
+      <div className="mx-auto w-full max-w-6xl px-6 mt-auto pt-8 flex justify-center">
         <a href="#sobre" className="text-muted-foreground hover:text-primary transition flex items-center gap-2 text-xs">
           <ArrowDown className="w-4 h-4 animate-bounce" /> role para conhecer
         </a>
@@ -783,15 +805,19 @@ function Footer() {
       <TermosModal open={termosOpen} onClose={() => setTermosOpen(false)} />
       <PrivacidadeModal open={privacidadeOpen} onClose={() => setPrivacidadeOpen(false)} />
       <footer className="border-t border-border bg-background">
-        <div className="mx-auto max-w-6xl px-6 h-14 grid grid-cols-3 items-center gap-4">
+        <div className="mx-auto max-w-6xl px-6 py-8 md:py-0 md:h-14 flex flex-col md:grid md:grid-cols-3 items-center gap-6 md:gap-4 text-center md:text-left">
           {/* Left — copyright */}
-          <div className="flex items-center gap-2 text-xs text-muted-foreground">
-            <Heart className="w-3.5 h-3.5 fill-primary text-primary" />
-            <span>© {new Date().getFullYear()} Otix Landing. Todos os direitos reservados.</span>
+          <div className="flex flex-col md:flex-row items-center gap-2 text-xs text-muted-foreground order-3 md:order-1">
+            <div className="flex items-center gap-1.5">
+              <Heart className="w-3.5 h-3.5 fill-primary text-primary" />
+              <span>© {new Date().getFullYear()} Otix Landing.</span>
+            </div>
+            <span className="hidden md:inline">Todos os direitos reservados.</span>
+            <span className="md:hidden">Todos os direitos reservados.</span>
           </div>
 
           {/* Center — links */}
-          <nav className="flex items-center justify-center gap-5 text-xs text-muted-foreground">
+          <nav className="flex items-center justify-center gap-5 text-xs text-muted-foreground order-1 md:order-2">
             <button onClick={() => setTermosOpen(true)} className="flex items-center gap-1.5 hover:text-primary transition">
               <Shield className="w-3.5 h-3.5" /> Termos
             </button>
@@ -801,7 +827,7 @@ function Footer() {
           </nav>
 
           {/* Right — crafted badge + instagram */}
-          <div className="flex items-center justify-end gap-2">
+          <div className="flex items-center justify-center md:justify-end gap-3 order-2 md:order-3">
             <div className="flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1.5 text-[10px] font-semibold tracking-widest uppercase text-muted-foreground">
               <img src={otixLogo} alt="Otix" className="w-6 h-6 rounded-sm object-cover" />
               Crafted by Otix
@@ -811,7 +837,7 @@ function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram da Otix"
-              className="w-8 h-8 rounded-full border border-border bg-card flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition"
+              className="w-8 h-8 rounded-full border border-border bg-card flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition shrink-0"
             >
               <Instagram className="w-3.5 h-3.5" />
             </a>
