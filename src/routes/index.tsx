@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import jenniferPhoto from "@/assets/jennifer.png";
 import otixLogo from "@/assets/logo quadrado sf.png";
+import logoImg from "@/assets/Logo.png";
 
 export const Route = createFileRoute("/")({ component: Index });
 
@@ -47,15 +48,8 @@ function Nav() {
       <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-background/80 border-b border-border/60">
         <div className="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
           {/* Brand */}
-          <a href="#inicio" className="flex items-center gap-3.5 group select-none">
-            <div className="leading-[0.8] flex flex-col justify-center" style={{ fontFamily: "'Alex Brush', cursive" }}>
-              <span className="text-[30px] text-primary">Jennifer</span>
-              <span className="text-[30px] text-primary -mt-1 pl-3">Ferreira</span>
-            </div>
-            <div className="w-px h-9 bg-primary/25 group-hover:bg-primary/50 transition-colors" />
-            <div className="text-[10px] leading-[1.3] text-primary font-normal tracking-wide max-w-[100px]">
-              Psicologia<br />Cognitiva<br />Comportamental
-            </div>
+          <a href="#inicio" className="flex items-center group select-none">
+            <img src={logoImg} alt="Jennifer Ferreira Logo" className="h-10 md:h-11 w-auto object-contain" />
           </a>
 
           {/* Desktop nav */}
@@ -99,7 +93,7 @@ function Nav() {
       >
         {/* Header do painel */}
         <div className="h-16 flex items-center justify-between px-6 border-b border-border">
-          <span className="text-[24px] text-primary select-none" style={{ fontFamily: "'Alex Brush', cursive" }}>Jennifer Ferreira</span>
+          <img src={logoImg} alt="Jennifer Ferreira Logo" className="h-8 w-auto object-contain" />
           <button
             onClick={() => setOpen(false)}
             className="w-8 h-8 flex items-center justify-center rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/10 transition"
