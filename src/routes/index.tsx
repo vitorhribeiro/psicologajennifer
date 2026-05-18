@@ -12,7 +12,7 @@ import {
   CloudRain, Smile, Activity, Leaf, Repeat, MoonStar, Quote, Star,
   Menu, X, ChevronRight,
 } from "lucide-react";
-import jenniferPhoto from "@/assets/jennifer.png";
+import jenniferPhoto from "@/assets/jennifer.jpeg";
 import otixLogo from "@/assets/logo quadrado sf.png";
 import logoImg from "@/assets/Logo.png";
 
