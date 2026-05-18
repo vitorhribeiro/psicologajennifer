@@ -49,7 +49,7 @@ function Nav() {
         <div className="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
           {/* Brand */}
           <a href="#inicio" className="flex items-center gap-4 group select-none">
-            <img src={logoImg} alt="Jennifer Ferreira Logo" className="h-11 md:h-14 w-auto object-contain" />
+            <img src={logoImg} alt="Jennifer Ferreira Logo" className="h-9 md:h-11 w-auto object-contain" />
             <div className="w-px h-10 bg-primary/25 group-hover:bg-primary/50 transition-colors" />
             <div className="text-[10px] leading-[1.3] text-primary font-normal tracking-wide max-w-[100px]">
               Psicologia<br />Cognitiva<br />Comportamental
@@ -98,8 +98,8 @@ function Nav() {
           {/* Header do painel */}
           <div className="h-20 flex items-center justify-between px-6">
             <div className="flex flex-col leading-none pt-2">
-              <span className="text-3xl text-primary" style={{ fontFamily: "'Sacramento', cursive" }}>Jennifer</span>
-              <span className="text-3xl text-primary ml-5 -mt-2" style={{ fontFamily: "'Sacramento', cursive" }}>Ferreira</span>
+              <span className="text-3xl text-primary" style={{ fontFamily: "'Calanthe', cursive", fontWeight: "normal" }}>Jennifer</span>
+              <span className="text-3xl text-primary ml-5 -mt-2" style={{ fontFamily: "'Calanthe', cursive", fontWeight: "normal" }}>Ferreira</span>
             </div>
             <button
               onClick={() => setOpen(false)}
@@ -244,7 +244,7 @@ function Hero() {
                 <Instagram className="w-[18px] h-[18px] md:w-5 md:h-5" />
               </a>
             </span>
-            <span className="text-primary font-serif font-bold block">
+            <span className="text-primary block" style={{ fontFamily: "'Calanthe', cursive", fontWeight: "normal", fontSize: "1.2em", lineHeight: "1.2" }}>
               Jennifer Ferreira
             </span>
           </h1>
@@ -991,13 +991,13 @@ function Preloader() {
         {/* Logo */}
         <div className={`flex flex-row items-center justify-end transition-all duration-[1.5s] ease-in-out flex-shrink-0 ${
           step >= 2 
-            ? "w-[80px] md:w-[112px] pr-0 opacity-100 scale-110" 
-            : (mounted ? "w-[92px] sm:w-[100px] md:w-[144px] pr-3 sm:pr-5 md:pr-8 opacity-100 scale-100" : "w-[92px] sm:w-[100px] md:w-[144px] pr-3 sm:pr-5 md:pr-8 opacity-0 scale-90")
+            ? "w-[64px] md:w-[96px] pr-0 opacity-100 scale-110" 
+            : (mounted ? "w-[76px] sm:w-[84px] md:w-[128px] pr-3 sm:pr-5 md:pr-8 opacity-100 scale-100" : "w-[76px] sm:w-[84px] md:w-[128px] pr-3 sm:pr-5 md:pr-8 opacity-0 scale-90")
         }`}>
           <img 
             src={logoImg} 
             alt="Logo Jennifer Ferreira" 
-            className="h-20 md:h-28 w-auto object-contain drop-shadow-sm" 
+            className="h-16 md:h-24 w-auto object-contain drop-shadow-sm" 
           />
         </div>
 
@@ -1027,8 +1027,8 @@ function Preloader() {
                 : "opacity-0 -translate-y-4 md:-translate-y-6 translate-x-0 pointer-events-none"
             }`}
           >
-            <span className="text-[2.2rem] md:text-[2.8rem] text-primary leading-none" style={{ fontFamily: "'Sacramento', cursive" }}>Jennifer</span>
-            <span className="text-[2.2rem] md:text-[2.8rem] text-primary ml-3 md:ml-6 -mt-2 md:-mt-3 leading-none" style={{ fontFamily: "'Sacramento', cursive" }}>Ferreira</span>
+            <span className="text-[2.2rem] md:text-[2.8rem] text-primary leading-none" style={{ fontFamily: "'Calanthe', cursive", fontWeight: "normal" }}>Jennifer</span>
+            <span className="text-[2.2rem] md:text-[2.8rem] text-primary ml-3 md:ml-6 -mt-2 md:-mt-3 leading-none" style={{ fontFamily: "'Calanthe', cursive", fontWeight: "normal" }}>Ferreira</span>
           </div>
 
           {/* State 1: Terapia Cognitiva */}

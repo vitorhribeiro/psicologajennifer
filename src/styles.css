@@ -137,6 +137,14 @@
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
+@font-face {
+  font-family: 'Calanthe';
+  src: url('./assets/fonts/Calanthe.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   * {
     border-color: var(--color-border);
